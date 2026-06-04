@@ -1,0 +1,35 @@
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi();
+
+// Add Cors Configuration
+// - in production the Vue app will be served from the same origin as the API, 
+// - so CORS won't be needed
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("VueDev", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+// Add Cors for dev
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+    app.UseCors("VueDev");
+}
+
+app.UseAuthorization();
+app.MapControllers();
+
+app.Run();

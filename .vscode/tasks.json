@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build: all",
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": ["$tsc", "$msCompile"],
+      "group": "build"
+    },
+    {
+      "label": "build: api",
+      "type": "shell",
+      "command": "dotnet build api",
+      "problemMatcher": "$msCompile",
+      "group": "build"
+    },
+    {
+      "label": "web: dev",
+      "type": "npm",
+      "script": "dev",
+      "path": "web/",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "web: type-check",
+      "type": "npm",
+      "script": "type-check",
+      "path": "web/",
+      "problemMatcher": "$tsc",
+      "group": "test"
+    },
+    {
+      "label": "web: build",
+      "type": "npm",
+      "script": "build",
+      "path": "web/",
+      "problemMatcher": "$tsc",
+      "group": "build"
+    },
+    {
+      "label": "web: lint",
+      "type": "npm",
+      "script": "lint",
+      "path": "web/",
+      "problemMatcher": [],
+      "group": "test"
+    }
+  ]
+}

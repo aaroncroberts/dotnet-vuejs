@@ -55,3 +55,25 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Vue / Node
+web/node_modules/
+web/dist/
+web/dist-ssr/
+web/coverage/
+web/.env.local
+web/.env.*.local
+web/dist/stats.html
+
+# dotnet
+api/bin/
+api/obj/
+api/*.user
+api/.vs/
+
+# VS Code
+.vscode/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
