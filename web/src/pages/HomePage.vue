@@ -13,14 +13,13 @@ onMounted(async () => {
     error.value = (e as Error).message
   }
 })
-
 </script>
 
 <template>
   <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
     <h1 class="text-2xl font-bold text-gray-900 mb-2">Home</h1>
-    <WeatherForecastList :forecasts="forecasts" :error="error"/>
-  </div>  
+    <WeatherForecastList :forecasts="forecasts" :error="error" />
+  </div>
 </template>
 
 <style scoped></style>
