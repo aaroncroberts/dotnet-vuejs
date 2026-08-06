@@ -7,7 +7,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 // Add Cors Configuration
-// - in production the Vue app will be served from the same origin as the API, 
+// - in production the Vue app will be served from the same origin as the API,
 // - so CORS won't be needed
 builder.Services.AddCors(options =>
 {
